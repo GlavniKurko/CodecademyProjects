@@ -1,5 +1,5 @@
 ****Project Ideas:**
-Blackjack
+\nBlackjack
 Tic-Tac-Toe
 Connect Four
 Battleship
