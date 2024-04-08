@@ -15,7 +15,7 @@ Your Very Own Text-Based Adventure
 **Project Objectives:**
 <ul>
 <li>Build a terminal program using Python</li>
-Add at least one interactive feature using input()
+<li><li>Add at least one interactive feature using input()</li></li>
 Use Git version control
 Use the command line and file navigation
 Write a technical blog post on the project
