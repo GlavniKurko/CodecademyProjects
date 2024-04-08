@@ -1,4 +1,4 @@
-****Project Ideas:**
+**Project Ideas:**
 <ul>
 <li>Blackjack</li>
 <li>Tic-Tac-Toe</li>
