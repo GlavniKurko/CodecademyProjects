@@ -41,26 +41,22 @@ def checkWinner(user1, user2):
             else:
                 pass
         update_board(user1, user2)
-    elif len(user1) == 4 and len(user2) == 4:
+    else:
         user1_list_2 = user1
         user2_list_2 = user2
         for x in winning_positions.values():
-            user1_list_2.sort()
-            user2_list_2.sort()
-            if user1_list_2 == x:
+            if x[0] in user1_list_2 and x[1] in user1_list_2 and x[2] in user1_list_2:
                 print("User1 has won!")
-                update_board(user1, user2)
+                update_board(user1_list_2, user2_list_2)
                 sys.exit()
-            elif user2_list_2 == x:
+            elif x[0] in user2_list_2 and x[1] in user2_list_2 and x[2] in user2_list_2:
                 print("User2 has won!")
-                update_board(user1, user2)
+                update_board(user1_list_2, user2_list_2)
                 sys.exit()
             else:
                 print("The Game is a draw!")
-                sys.exit() 
-    else:
-        print("The Game is a draw!")
-        sys.exit()
+                update_board(user1_list_2, user2_list_2)
+                sys.exit()
 
 def update_board(user1, user2):
     global gameboard
