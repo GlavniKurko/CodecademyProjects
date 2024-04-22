@@ -25,25 +25,8 @@ def checkWinner(user1, user2):
     if len(user1) < 3 and len(user2) < 3:
         update_board(user1, user2)
     elif len(user1) == 3 and len(user2) == 3:
-        user1.sort()
-        user2.sort()
-        for x in winning_positions.values():
-            if user1 == x:
-                print("User1 has won!")
-                update_board(user1, user2)
-                sys.exit()
-            elif user2 == x:
-                print("User2 has won!")
-                update_board(user1, user2)
-                sys.exit()
-            else:
-                break
-        update_board(user1, user2)
-    elif len(user1) == 4 and len(user2) == 4:
         user1_list = user1
         user2_list = user2
-        print(user1_list)
-        print(user2_list)
         for x in winning_positions.values():
             user1_list.sort()
             user2_list.sort()
@@ -58,6 +41,26 @@ def checkWinner(user1, user2):
             else:
                 break
         update_board(user1, user2)
+    elif len(user1) == 4 and len(user2) == 4:
+        user1_list_2 = user1
+        user2_list_2 = user2
+        user1_list_2.pop(0)
+        user2_list_2.pop(0)
+        for x in winning_positions.values():
+            user1_list_2.sort()
+            user2_list_2.sort()
+            if user1_list_2 == x:
+                print("User1 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            elif user2_list_2 == x:
+                print("User2 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            else:
+                print("The Game is a draw!")
+                update_board(user1, user2)
+                sys.exit() 
     else:
         print("The Game is a draw!")
         sys.exit()
@@ -86,18 +89,7 @@ def main():
         user1_moves.append(user1_input)
         user2_input = str(input("User2 Pick a Square: "))
         user2_moves.append(user2_input)
-        print(len(user1_moves))
-        print(len(user2_moves))
         checkWinner(user1_moves, user2_moves)
-
-
-
-
-
-
-    
-
-
 
 print(''' _____  _  ____     _____  ____  ____     _____  ____  _____  
 /__ __\/ \/   _\   /__ __\/  _ \/   _\   /__ __\/  _ \/  __/  
