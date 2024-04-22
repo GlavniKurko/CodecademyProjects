@@ -19,7 +19,7 @@
 <li>Add at least one interactive feature using input()</li>
 <li>Use Git version control</li>
 <li>Use the command line and file navigation</li>
-<li>Write a technical blog post on the </li>
+<li>Write a technical blog post on the Project </li>
 </ul>
 
 **Prerequisites**:
