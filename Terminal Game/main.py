@@ -1,3 +1,5 @@
+import sys
+
 game_over = False
 gameboard = {1: '''          
                          |           |             
@@ -14,7 +16,52 @@ gameboard = {1: '''
              ____________|___________|__________
                          |           |
                          |           |'''}
- 
+
+def checkWinner(user1, user2):
+    global game_over
+    global gameboard
+    gameboard_string = gameboard[1]
+    winning_positions = {1: ["1","2","3"], 2: ["1","5","9"], 3: ["1","4","7"], 4: ["2","5","8"], 5: ["3","6","9"], 6: ["3","5","7"], 7: ["4","5","6"], 8: ["7","8","9"]}
+    if len(user1) < 3 and len(user2) < 3:
+        update_board(user1, user2)
+    elif len(user1) == 3 and len(user2) == 3:
+        user1.sort()
+        user2.sort()
+        for x in winning_positions.values():
+            if user1 == x:
+                print("User1 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            elif user2 == x:
+                print("User2 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            else:
+                break
+        update_board(user1, user2)
+    elif len(user1) == 4 and len(user2) == 4:
+        user1_list = user1
+        user2_list = user2
+        print(user1_list)
+        print(user2_list)
+        for x in winning_positions.values():
+            user1_list.sort()
+            user2_list.sort()
+            if user1_list == x:
+                print("User1 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            elif user2_list == x:
+                print("User2 has won!")
+                update_board(user1, user2)
+                sys.exit()
+            else:
+                break
+        update_board(user1, user2)
+    else:
+        print("The Game is a draw!")
+        sys.exit()
+
 def update_board(user1, user2):
     global gameboard
     gameboard_string = gameboard[1]
@@ -39,8 +86,9 @@ def main():
         user1_moves.append(user1_input)
         user2_input = str(input("User2 Pick a Square: "))
         user2_moves.append(user2_input)
-
-        update_board(user1_moves, user2_moves)
+        print(len(user1_moves))
+        print(len(user2_moves))
+        checkWinner(user1_moves, user2_moves)
 
 
 
