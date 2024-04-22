@@ -85,9 +85,9 @@ def main():
     user1_moves = []
     user2_moves = []
     while game_over != True:
-        user1_input = str(input("User1 Pick a Square: "))
+        user1_input = str(input("P1 Pick a Square: "))
         user1_moves.append(user1_input)
-        user2_input = str(input("User2 Pick a Square: "))
+        user2_input = str(input("P2 Pick a Square: "))
         user2_moves.append(user2_input)
         checkWinner(user1_moves, user2_moves)
 
