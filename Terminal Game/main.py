@@ -45,6 +45,7 @@ def checkWinner(user1, user2):
         user1_list_2 = user1
         user2_list_2 = user2
         for x in winning_positions.values():
+            print(x[0], x[1], x[2])
             if x[0] in user1_list_2 and x[1] in user1_list_2 and x[2] in user1_list_2:
                 print("User1 has won!")
                 update_board(user1_list_2, user2_list_2)
@@ -54,9 +55,10 @@ def checkWinner(user1, user2):
                 update_board(user1_list_2, user2_list_2)
                 sys.exit()
             else:
-                print("The Game is a draw!")
-                update_board(user1_list_2, user2_list_2)
-                sys.exit()
+                pass
+        print("The Game is a draw!")
+        update_board(user1_list_2, user2_list_2)
+        sys.exit()
 
 def update_board(user1, user2):
     global gameboard
