@@ -27,9 +27,9 @@ def checkWinner(user1, user2):
     elif len(user1) == 3 and len(user2) == 3:
         user1_list = user1
         user2_list = user2
+        user1_list.sort()
+        user2_list.sort()
         for x in winning_positions.values():
-            user1_list.sort()
-            user2_list.sort()
             if user1_list == x:
                 print("User1 has won!")
                 update_board(user1, user2)
@@ -39,7 +39,7 @@ def checkWinner(user1, user2):
                 update_board(user1, user2)
                 sys.exit()
             else:
-                break
+                pass
         update_board(user1, user2)
     elif len(user1) == 4 and len(user2) == 4:
         user1_list_2 = user1
@@ -59,7 +59,6 @@ def checkWinner(user1, user2):
                 sys.exit()
             else:
                 print("The Game is a draw!")
-                update_board(user1, user2)
                 sys.exit() 
     else:
         print("The Game is a draw!")
