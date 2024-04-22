@@ -44,8 +44,6 @@ def checkWinner(user1, user2):
     elif len(user1) == 4 and len(user2) == 4:
         user1_list_2 = user1
         user2_list_2 = user2
-        user1_list_2.pop(0)
-        user2_list_2.pop(0)
         for x in winning_positions.values():
             user1_list_2.sort()
             user2_list_2.sort()
