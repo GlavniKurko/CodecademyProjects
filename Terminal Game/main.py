@@ -88,17 +88,27 @@ def get_gameboard():
     global gameboard
     print(gameboard[1])
 
+def verify_input(user_square):
+    if user_square > 0 and user_square <= 9:
+        pass
+    else:
+        print("An invalid square has been inputed. Program exiting...")
+        sys.exit()
+
+
 def main():
     global game_over
     get_gameboard()
     user1_moves = []
     user2_moves = []
     while game_over != True:
-        user1_input = str(input("P1 Pick a Square: "))
-        user1_moves.append(user1_input)
+        user1_input = int(input("P1 Pick a Square: "))
+        verify_input(user1_input)
+        user1_moves.append(str(user1_input))
         checkWinner(user1_moves, user2_moves)
-        user2_input = str(input("P2 Pick a Square: "))
-        user2_moves.append(user2_input)
+        user2_input = int(input("P2 Pick a Square: "))
+        verify_input(user2_input)
+        user2_moves.append(str(user2_input))
         checkWinner(user1_moves, user2_moves)
 
 print(''' _____  _  ____     _____  ____  ____     _____  ____  _____  
