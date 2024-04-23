@@ -105,10 +105,27 @@ def main():
         user1_input = int(input("P1 Pick a Square: "))
         verify_input(user1_input)
         user1_moves.append(str(user1_input))
+        for x in user2_moves:
+            if x == "":
+                pass
+            elif x in user1_moves:
+                print("You cannot pick a square that has already been selected by player 2. Program exiting...")
+                sys.exit()
+            else:
+                pass
         checkWinner(user1_moves, user2_moves)
+
         user2_input = int(input("P2 Pick a Square: "))
         verify_input(user2_input)
         user2_moves.append(str(user2_input))
+        for x in user1_moves:
+            if x == "":
+                pass
+            elif x in user2_moves:
+                print("You cannot pick a square that has already been selected by player 1. Program exiting...")
+                sys.exit()
+            else:
+                pass
         checkWinner(user1_moves, user2_moves)
 
 print(''' _____  _  ____     _____  ____  ____     _____  ____  _____  
